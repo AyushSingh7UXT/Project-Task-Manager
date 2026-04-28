@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-[#f5f7fb] text-slate-900 antialiased dark:bg-[#0b1020] dark:text-slate-100;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(81, 101, 255, 0.12), transparent 25%),
+    radial-gradient(circle at 85% 70%, rgba(255, 126, 64, 0.12), transparent 30%);
+}
+
+@layer components {
+  .surface {
+    @apply rounded-3xl border border-white/60 bg-white/80 shadow-[0_24px_64px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/65 dark:shadow-[0_24px_64px_rgba(0,0,0,0.35)];
+  }
+
+  .surface-muted {
+    @apply rounded-2xl border border-slate-200/70 bg-white/60 dark:border-white/10 dark:bg-slate-900/40;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-brand-600 to-blue-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:opacity-95;
+  }
+
+  .input-modern {
+    @apply w-full rounded-xl border border-slate-200/80 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-100 dark:border-slate-700 dark:bg-slate-900 dark:focus:ring-brand-900/30;
+  }
+}
